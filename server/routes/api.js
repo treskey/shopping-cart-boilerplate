@@ -93,8 +93,11 @@ const Product = require("../models/product");
 const CartItem = require("../models/cartItem");
 
 router.get("/products", (req, res, next) => {
+  console.log("here");
   Product.find({})
-    .then((products) => res.json(products))
+    .then((products) => {
+      console.log(products)
+      res.json(products)})
     .catch(next);
 });
 
